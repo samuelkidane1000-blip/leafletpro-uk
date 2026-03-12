@@ -45,7 +45,7 @@ button, input, select, textarea { font: inherit; }
   align-items: center;
   padding: 16px 0;
 }
-.brand img { height: 42px; }
+.brand img { height: 38px; }
 .main-nav {
   display: flex;
   align-items: center;
