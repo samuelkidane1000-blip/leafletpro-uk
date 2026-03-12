@@ -122,11 +122,11 @@ button, input, select, textarea { font: inherit; }
   background: rgba(14,92,182,0.08);
   color: #15345e;
 }
-.hero h1 {
-  margin: 18px 0 16px;
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
+.hero h1{
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 720px;
 }
 .hero-text {
   max-width: 620px;
