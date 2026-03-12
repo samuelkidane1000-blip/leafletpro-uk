@@ -1,0 +1,28 @@
+<svg width="900" height="580" viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="580" rx="22" fill="#eef3e8"/>
+<g stroke="#cbd7b9" stroke-width="2" opacity="0.9">
+  <path d="M0 110H900M0 220H900M0 330H900M0 440H900"/>
+  <path d="M110 0V580M220 0V580M330 0V580M440 0V580M550 0V580M660 0V580M770 0V580"/>
+</g>
+<path d="M0 420C100 360 210 340 310 385C420 435 490 450 620 392C720 348 808 348 900 382V580H0V420Z" fill="#b9d9f0"/>
+<g fill-opacity="0.84" stroke="#ffffff" stroke-width="4" font-family="Inter, Arial, sans-serif" font-weight="800" text-anchor="middle">
+  <path d="M376 155L476 120L531 182L475 256L360 244L336 186Z" fill="#5aa6e6"/>
+  <text x="431" y="195" fill="#fff" font-size="34">W1</text>
+  <path d="M252 224L357 196L360 244L334 310L224 300L196 248Z" fill="#4bc3d6"/>
+  <text x="284" y="267" fill="#fff" font-size="34">SW2</text>
+  <path d="M345 246L475 256L500 342L372 370L305 308Z" fill="#b870d7"/>
+  <text x="398" y="317" fill="#fff" font-size="34">SW2</text>
+  <path d="M470 255L592 244L630 315L560 382L500 342Z" fill="#efab41"/>
+  <text x="550" y="316" fill="#fff" font-size="34">N1</text>
+  <path d="M592 244L744 202L808 278L748 380L630 315Z" fill="#8fd068"/>
+  <text x="704" y="300" fill="#fff" font-size="34">N1</text>
+  <path d="M560 382L676 360L724 460L612 502L525 456Z" fill="#b1b548"/>
+  <text x="625" y="443" fill="#fff" font-size="34">SE1</text>
+  <path d="M372 370L500 342L525 456L402 510L314 438Z" fill="#57b3d8"/>
+  <text x="418" y="452" fill="#fff" font-size="34">SE5</text>
+  <path d="M224 300L334 310L314 438L190 426L156 350Z" fill="#6dbb57"/>
+  <text x="246" y="379" fill="#fff" font-size="34">SW1</text>
+  <path d="M724 460L824 432L862 500L770 540L690 505Z" fill="#9fce93"/>
+  <text x="780" y="504" fill="#fff" font-size="30">SE1</text>
+</g>
+</svg>

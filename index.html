@@ -1,329 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LeafletPro UK | Tracked Leaflet Distribution Across London</title>
-  <meta name="description" content="Premium door-to-door leaflet distribution, print and campaign booking across London with tracked routes, postcode pricing and online booking." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeafletPro UK | Door-to-Door Leaflet Distribution Across London</title>
+  <meta name="description" content="Professional leaflet distribution across London with postcode targeting, tracked delivery, printing and design services." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="brand" href="#top" aria-label="LeafletPro UK home">
-        <img src="/images/logo.svg" alt="LeafletPro UK" />
-      </a>
-      <nav class="main-nav">
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="LeafletPro UK logo" class="brand-logo" />
+        <div>
+          <div class="brand-name">LeafletPro UK</div>
+          <div class="brand-tag">Tracked leaflet campaigns across London</div>
+        </div>
+      </div>
+      <nav class="menu">
         <a href="#services">Services</a>
         <a href="#coverage">Coverage</a>
-        <a href="#calculator">Pricing</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#calculator">Get quote</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-layer hero-grid"></div>
-      <div class="hero-layer hero-gradient"></div>
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <span class="eyebrow">Tracked leaflet campaigns across London</span>
-          <h1>Leaflet distribution that looks premium, books online and converts like a real sales machine.</h1>
-          <p class="hero-text">Built for serious local businesses: tracked delivery routes, instant postcode pricing, print and design add-ons, and Stripe booking in one polished platform.</p>
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="#calculator">Get instant quote</a>
-            <a class="btn btn-ghost" href="#coverage">View coverage map</a>
-          </div>
-          <div class="proof-strip">
-            <div><strong>GPS tracked</strong><span>Every campaign route logged</span></div>
-            <div><strong>Shared & solus</strong><span>Choose the right cost model</span></div>
-            <div><strong>Print included</strong><span>Design, print and delivery</span></div>
-          </div>
-        </div>
-
-        <aside class="hero-quote-card">
-          <div class="card-topline">Instant campaign estimate</div>
-          <h2>Check your London pricing in under 30 seconds.</h2>
-          <form id="heroQuoteForm" class="hero-form">
-            <label>
-              <span>Postcode</span>
-              <input type="text" name="postcode" id="heroPostcode" placeholder="e.g. E14 5AB" required>
-            </label>
-            <div class="split-fields">
-              <label>
-                <span>Leaflets</span>
-                <select name="quantity" id="heroQuantity">
-                  <option value="5000">5,000</option>
-                  <option value="10000">10,000</option>
-                  <option value="20000">20,000</option>
-                  <option value="50000">50,000</option>
-                  <option value="100000">100,000</option>
-                </select>
-              </label>
-              <label>
-                <span>Campaign</span>
-                <select name="deliveryType" id="heroDeliveryType">
-                  <option value="solus">Solus</option>
-                  <option value="shared">Shared</option>
-                </select>
-              </label>
-            </div>
-            <button class="btn btn-dark btn-full" type="submit">See price and map</button>
-          </form>
-          <div class="quote-glance">
-            <div><span>Recommended zone</span><strong id="heroZoneName">Central London</strong></div>
-            <div><span>Estimated total</span><strong id="heroQuickTotal">£762.00</strong></div>
-          </div>
-        </aside>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Door-to-Door Leaflet Distribution Across London</h1>
+        <p>Reach thousands of homes with reliable and tracked leaflet campaigns.</p>
+        <form class="quote-bar" id="quote-form">
+          <select id="quantity">
+            <option value="1000">1000 leaflets</option>
+            <option value="5000">5000 leaflets</option>
+            <option value="10000">10000 leaflets</option>
+          </select>
+          <select id="deliveryType">
+            <option value="shared">Shared delivery</option>
+            <option value="solus">Solus delivery</option>
+          </select>
+          <button type="submit">Get Instant Quote</button>
+        </form>
+        <div class="hero-result" id="quote-result">1000 leaflets · Shared delivery · <strong>£55</strong></div>
       </div>
-    </section>
-
-    <section class="trust-band">
-      <div class="container trust-grid">
-        <div><strong>48–72h</strong><span>Typical launch window</span></div>
-        <div><strong>London zones</strong><span>Central, North, East, South, West</span></div>
-        <div><strong>Print + design</strong><span>Book everything in one order</span></div>
-        <div><strong>Admin dashboard</strong><span>Leads, bookings, payment status</span></div>
+      <div class="hero-ticks">
+        <span>✔ GPS tracked delivery</span>
+        <span>✔ Solus &amp; shared campaigns</span>
+        <span>✔ Print &amp; design service</span>
+        <span>✔ Fast 48-hour turnaround</span>
       </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading center">
-          <span class="eyebrow dark">What clients actually buy</span>
-          <h2>A proper commercial website structure, not a starter template.</h2>
-          <p>Everything is designed to feel premium and move a visitor from trust to quote to booking.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card featured">
-            <div class="service-icon">01</div>
-            <h3>Door-to-door distribution</h3>
-            <p>Book shared or solus campaigns with postcode-targeted London coverage and live route-based pricing.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">02</div>
-            <h3>Print management</h3>
-            <p>Bundle design, print and delivery into one campaign so customers do not need separate suppliers.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">03</div>
-            <h3>Tracked reporting</h3>
-            <p>Position your service as verified and accountable with tracked distribution included in pricing.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">04</div>
-            <h3>Online booking</h3>
-            <p>Save an order as a lead or let the customer pay immediately through Stripe checkout.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="coverage">
-      <div class="container coverage-layout">
-        <div class="coverage-copy">
-          <span class="eyebrow dark">Real London delivery coverage map</span>
-          <h2>Show prospects exactly where you operate and what each area costs.</h2>
-          <p>The map includes London service zones with live postcode matching. Enter any postcode and the site highlights the best-fit campaign area.</p>
-          <div class="coverage-search">
-            <input id="mapPostcode" type="text" placeholder="Enter a London postcode">
-            <button id="mapLookupBtn" class="btn btn-dark" type="button">Check coverage</button>
-          </div>
-          <div class="zone-panels" id="zonePanels"></div>
-        </div>
-        <div class="map-shell">
-          <div class="map-header">
-            <div>
-              <strong id="selectedZoneLabel">Central London</strong>
-              <span id="selectedZoneInsight">Highest density and premium targeting</span>
-            </div>
-            <div class="map-chip" id="selectedRateChip">From £64 / 1,000</div>
-          </div>
-          <div id="map"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="calculator">
-      <div class="container calculator-layout">
-        <div>
-          <div class="section-heading left light">
-            <span class="eyebrow">Pricing calculator</span>
-            <h2>Quote, save lead, or take payment.</h2>
-            <p>Everything a serious leaflet company needs: postcode pricing, print, design, tracking and payment booking.</p>
-          </div>
-
-          <form id="quoteForm" class="quote-form">
-            <div class="field-grid three-col">
-              <label>
-                <span>Full name</span>
-                <input name="customerName" placeholder="Your full name" required>
-              </label>
-              <label>
-                <span>Company name</span>
-                <input name="companyName" placeholder="Business name">
-              </label>
-              <label>
-                <span>Email address</span>
-                <input name="email" type="email" placeholder="you@business.com" required>
-              </label>
-              <label>
-                <span>Phone number</span>
-                <input name="phone" placeholder="07... or office number" required>
-              </label>
-              <label>
-                <span>Target postcode</span>
-                <input name="postcode" id="postcodeInput" placeholder="SW18 1AA" required>
-              </label>
-              <label>
-                <span>Leaflet quantity</span>
-                <select name="quantity" id="quantitySelect">
-                  <option value="5000">5,000</option>
-                  <option value="10000">10,000</option>
-                  <option value="20000">20,000</option>
-                  <option value="50000">50,000</option>
-                  <option value="100000">100,000</option>
-                  <option value="150000">150,000</option>
-                  <option value="250000">250,000</option>
-                </select>
-              </label>
-              <label>
-                <span>Delivery type</span>
-                <select name="deliveryType" id="deliveryTypeSelect">
-                  <option value="solus">Solus distribution</option>
-                  <option value="shared">Shared distribution</option>
-                </select>
-              </label>
-              <label>
-                <span>Launch speed</span>
-                <select name="priorityWindow" id="priorityWindowSelect">
-                  <option value="standard">Standard scheduling</option>
-                  <option value="express">Express priority launch</option>
-                </select>
-              </label>
-              <label>
-                <span>Preferred start</span>
-                <input name="preferredStart" type="date">
-              </label>
-            </div>
-            <div class="check-grid">
-              <label class="check-card active">
-                <input type="checkbox" name="printIncluded" id="printIncluded" checked>
-                <span>Include print management</span>
-                <small>Professional print priced per 1,000 leaflets</small>
-              </label>
-              <label class="check-card active">
-                <input type="checkbox" name="trackedDistribution" id="trackedDistribution" checked>
-                <span>Tracked delivery reporting</span>
-                <small>Add route proof and accountability</small>
-              </label>
-              <label class="check-card">
-                <input type="checkbox" name="designNeeded" id="designNeeded">
-                <span>Add design service</span>
-                <small>Professional flyer design for £145</small>
-              </label>
-            </div>
-            <label>
-              <span>Campaign notes</span>
-              <textarea name="notes" placeholder="Tell us about your offer, sectors, streets or campaign goals"></textarea>
-            </label>
-            <div class="form-actions">
-              <button id="saveOrderBtn" class="btn btn-gold" type="button">Save as lead</button>
-              <button id="checkoutBtn" class="btn btn-light" type="button">Book and pay with Stripe</button>
-            </div>
-            <p class="fine-print light">The booking flow creates the order first, then sends the customer to Stripe checkout. The success page verifies payment and marks the order paid.</p>
-          </form>
-        </div>
-
-        <aside class="summary-card">
-          <div class="summary-top">
-            <span class="eyebrow dark">Live campaign summary</span>
-            <h3 id="summaryZone">Central London</h3>
-            <p id="summaryInsight">Highest density and premium targeting</p>
-          </div>
-          <div class="summary-stats">
-            <div class="summary-row"><span>Distribution</span><strong id="distributionCost">£320.00</strong></div>
-            <div class="summary-row"><span>Print</span><strong id="printCost">£155.00</strong></div>
-            <div class="summary-row"><span>Tracking</span><strong id="trackingCost">£45.00</strong></div>
-            <div class="summary-row"><span>Design</span><strong id="designCost">£0.00</strong></div>
-            <div class="summary-row"><span>Setup</span><strong id="setupCost">£35.00</strong></div>
-            <div class="summary-row"><span>Priority</span><strong id="priorityCost">£0.00</strong></div>
-            <div class="summary-row"><span>Subtotal</span><strong id="subtotalCost">£555.00</strong></div>
-            <div class="summary-row"><span>VAT</span><strong id="vatCost">£111.00</strong></div>
-            <div class="summary-row total"><span>Total</span><strong id="totalCost">£666.00</strong></div>
-          </div>
-          <div class="summary-metrics">
-            <div><span>Est. homes reached</span><strong id="estimatedHomes">4,630</strong></div>
-            <div><span>Delivery window</span><strong id="estimatedDays">2–4 days</strong></div>
-            <div><span>Rate / 1,000</span><strong id="ratePerThousand">£64.00</strong></div>
-          </div>
-          <div id="statusMessage" class="status-message"></div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="reasons">
-      <div class="container">
-        <div class="section-heading center">
-          <span class="eyebrow dark">Why businesses choose you</span>
-          <h2>Premium trust signals that make the site feel expensive.</h2>
-        </div>
-        <div class="reason-grid">
-          <article><strong>Transparent pricing</strong><p>No guesswork. Pricing updates instantly based on area, volume and service options.</p></article>
-          <article><strong>Premium presentation</strong><p>The homepage sells design, print and delivery as one professional service.</p></article>
-          <article><strong>Fast lead handling</strong><p>Saved orders drop straight into the dashboard with customer details and campaign values.</p></article>
-          <article><strong>Online payments</strong><p>Customers can pay there and then, which reduces drop-off and speeds up bookings.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="reviews">
-      <div class="container">
-        <div class="section-heading center">
-          <span class="eyebrow dark">Reviews</span>
-          <h2>Testimonials with real people names, not generic labels.</h2>
-        </div>
-        <div class="reviews-grid">
-          <article class="review-card"><div class="stars">★★★★★</div><p>Great results from our leaflet campaign. The whole process felt organised and professional from start to finish.</p><span>Sarah Williams</span></article>
-          <article class="review-card"><div class="stars">★★★★★</div><p>Reliable distribution team and very strong communication. We booked quickly and had complete confidence in the campaign.</p><span>James Davies</span></article>
-          <article class="review-card"><div class="stars">★★★★★</div><p>Fast turnaround, clear pricing and a much more premium service than most local leaflet companies.</p><span>Emma Thompson</span></article>
-          <article class="review-card"><div class="stars">★★★★★</div><p>The postcode targeting and instant quote made it easy for us to plan a campaign without wasting time.</p><span>Daniel Carter</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-section" id="contact">
-      <div class="container cta-panel">
-        <div>
-          <span class="eyebrow dark">Ready to launch</span>
-          <h2>Professional enough to sell now, flexible enough to grow later.</h2>
-          <p>Use this version as your commercial launch site, then layer in a real database, Stripe webhooks and customer accounts when you are ready.</p>
-        </div>
-        <div class="contact-card">
-          <div><strong>Email</strong><span id="businessEmail">info@leafletprouk.com</span></div>
-          <div><strong>Phone</strong><span id="businessPhone">020 8103 5100</span></div>
-          <a class="btn btn-dark btn-full" href="#calculator">Launch a campaign</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <span id="footerBusinessName">LeafletPro UK</span>
-      <span>Professional leaflet distribution platform</span>
-      <span id="footerYear"></span>
     </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="section-sub">Postcode targeting and GPS-tracked distribution across London and the UK.</p>
+      <div class="cards four">
+        <article class="card">
+          <div class="icon">🏠</div>
+          <h3>Leaflet Distribution</h3>
+          <p>Door-to-door campaigns across targeted areas.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🖨️</div>
+          <h3>Printing</h3>
+          <p>High quality leaflet printing from 1k-100k.</p>
+        </article>
+        <article class="card">
+          <div class="icon">✏️</div>
+          <h3>Graphic Design</h3>
+          <p>Professional leaflet design services.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🗺️</div>
+          <h3>Targeted Campaigns</h3>
+          <p>Postcode and demographic targeting.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section coverage" id="coverage">
+    <div class="container coverage-grid">
+      <div>
+        <h2>Where We Deliver</h2>
+        <p class="left-copy">Postcode targeting and <strong>GPS-tracked</strong> distribution across London and the UK.</p>
+        <ul class="checks">
+          <li>GPS tracked delivery</li>
+          <li>Solus &amp; shared campaigns</li>
+          <li>Print &amp; design service</li>
+          <li>Fast 48-hour turnaround</li>
+        </ul>
+      </div>
+      <div class="map-card">
+        <img src="assets/coverage-map.svg" alt="London coverage map" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <h2>Why Businesses Choose Us</h2>
+      <div class="cards three reviews-grid">
+        <article class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>Great results from our leaflet campaign.</p>
+          <span>– Sarah Williams</span>
+        </article>
+        <article class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>Very professional service. The team delivered exactly what was promised and communication was excellent.</p>
+          <span>– James Davies</span>
+        </article>
+        <article class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>Fast turnaround and good pricing. Our campaign reached thousands of homes exactly as planned.</p>
+          <span>– Emma Thompson</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container cta-box">
+      <div>
+        <h2>Ready to launch your next campaign?</h2>
+        <p>Get a fast quote for leaflet distribution, printing and design.</p>
+      </div>
+      <a class="cta-btn" href="#quote-form">Get Instant Quote</a>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-name footer-brand">LeafletPro UK</div>
+        <p>Door-to-door leaflet distribution that looks professional and converts.</p>
+      </div>
+      <div>
+        <strong>Email</strong>
+        <p>info@leafletprouk.com</p>
+      </div>
+      <div>
+        <strong>Phone</strong>
+        <p>020 8103 5100</p>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> LeafletPro UK</div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="script.js"></script>
 </body>
 </html>
