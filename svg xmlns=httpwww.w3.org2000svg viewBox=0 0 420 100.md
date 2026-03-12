@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100">  
+  <rect width="420" height="100" fill="white"/>  
+    
+  <!-- Map pin icon -->  
+  <g transform="translate(10,10)">  
+    <path d="M40 0C18 0 0 18 0 40c0 28 40 60 40 60s40-32 40-60C80 18 62 0 40 0z" fill="#2c6df2"/>  
+    <circle cx="40" cy="40" r="14" fill="white"/>  
+  </g>  
+  
+  <!-- Brand text -->  
+  <text x="100" y="60" font-size="40" font-family="Arial, Helvetica, sans-serif" fill="#1d2d50">  
+    LeafletPro  
+  </text>  
+  
+  <text x="315" y="60" font-size="40" font-family="Arial, Helvetica, sans-serif" fill="#3bb273">  
+    UK  
+  </text>  
+</svg>  
