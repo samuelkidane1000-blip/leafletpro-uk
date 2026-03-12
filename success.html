@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking confirmed | LeafletPro UK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="section cta-section">
+    <div class="container cta-panel">
+      <div>
+        <span class="eyebrow dark">Stripe booking</span>
+        <h2>Checking your payment and campaign booking.</h2>
+        <p id="paymentMessage">Please wait while we verify your Stripe session.</p>
+      </div>
+      <div class="contact-card">
+        <div><strong>Order ID</strong><span id="orderId">Pending...</span></div>
+        <div><strong>Payment status</strong><span id="paymentStatus">Checking...</span></div>
+        <div><strong>Amount</strong><span id="paymentAmount">—</span></div>
+        <a class="btn btn-dark btn-full" href="/">Back to homepage</a>
+      </div>
+    </div>
+  </section>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+    const paymentMessage = document.getElementById('paymentMessage');
+    const orderId = document.getElementById('orderId');
+    const paymentStatus = document.getElementById('paymentStatus');
+    const paymentAmount = document.getElementById('paymentAmount');
+    const money = (value) => `£${Number(value || 0).toFixed(2)}`;
+
+    async function verify() {
+      if (!sessionId) {
+        paymentMessage.textContent = 'No session ID was supplied in the return URL.';
+        return;
+      }
+      try {
+        const response = await fetch(`/api/checkout-session/${sessionId}`);
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Unable to verify payment');
+        orderId.textContent = data.orderId || 'Not found';
+        paymentStatus.textContent = data.paymentStatus === 'paid' ? 'Paid and booked' : data.paymentStatus;
+        paymentAmount.textContent = money(data.amountTotal);
+        paymentMessage.textContent = data.paymentStatus === 'paid'
+          ? 'Your payment has been confirmed and the order has been marked as paid.'
+          : 'Stripe returned the session, but payment is not marked as paid yet.';
+      } catch (error) {
+        paymentMessage.textContent = error.message;
+        paymentStatus.textContent = 'Verification failed';
+      }
+    }
+    verify();
+  </script>
+</body>
+</html>

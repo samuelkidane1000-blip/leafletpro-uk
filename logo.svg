@@ -1,0 +1,22 @@
+<svg width="360" height="88" viewBox="0 0 360 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="12" y1="12" x2="82" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1C6FD0"/>
+      <stop offset="1" stop-color="#35B36C"/>
+    </linearGradient>
+  </defs>
+  <path d="M10 17.5L42.5 6L75 17.5V69L42.5 59.5L10 69V17.5Z" fill="url(#g1)"/>
+  <path d="M10 17.5L42.5 29.5L75 17.5" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 11L26 64" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3.5"/>
+  <path d="M59 11L59 64" stroke="#ffffff" stroke-opacity="0.55" stroke-width="3.5"/>
+  <path d="M10 69C18 64 27 63 42.5 67C58 63 67 64 75 69" stroke="#0F2647" stroke-width="5" stroke-linecap="round"/>
+  <path d="M43 11C34.163 11 27 18.29 27 27.281C27 39.132 43 54 43 54C43 54 59 39.132 59 27.281C59 18.29 51.837 11 43 11Z" fill="#0D5CB5" stroke="#F7FAFF" stroke-width="4"/>
+  <circle cx="43" cy="27" r="8.5" fill="#F7FAFF"/>
+  <path d="M104 18H124.188C141.188 18 152.5 28.375 152.5 45.313C152.5 62.188 141.188 72.5 124.188 72.5H104V18ZM122.938 61.313C132.25 61.313 138.688 55.813 138.688 45.313C138.688 34.75 132.25 29.188 122.938 29.188H117.5V61.313H122.938Z" fill="#0F2647"/>
+  <path d="M158.688 18H172.125V72.5H158.688V18Z" fill="#0F2647"/>
+  <path d="M181.188 18H194.625V61.063H220.75V72.5H181.188V18Z" fill="#0F2647"/>
+  <path d="M226 18H247.75C260.688 18 268.938 24.625 268.938 36.5C268.938 44.125 265.063 49.438 258.063 52L270.125 72.5H255.125L244.813 54.5H239.438V72.5H226V18ZM246.563 43.625C252.625 43.625 255.375 41.063 255.375 36.875C255.375 32.625 252.625 30.063 246.563 30.063H239.438V43.625H246.563Z" fill="#0F2647"/>
+  <path d="M275.625 18H289.063V72.5H275.625V18Z" fill="#0F2647"/>
+  <path d="M303.906 72.5L285.656 18H300.125L309.875 51.188L319.625 18H334.094L315.844 72.5H303.906Z" fill="#35B36C"/>
+  <path d="M338.969 18H352.406V72.5H338.969V18Z" fill="#35B36C"/>
+</svg>
