@@ -4,6 +4,6 @@
     <path d="M40 0C18 0 0 18 0 40c0 28 40 60 40 60s40-32 40-60C80 18 62 0 40 0z" fill="#2c6df2"/>
     <circle cx="40" cy="40" r="14" fill="white"/>
   </g>
-  <text x="100" y="60" font-size="40" font-family="Arial, Helvetica, sans-serif" fill="#1d2d50">LeafletPro</text>
+  <text x="96" y="62" font-size="44" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="#ffffff">LeafletPro</text>
   <text x="315" y="60" font-size="40" font-family="Arial, Helvetica, sans-serif" fill="#3bb273">UK</text>
 </svg>
