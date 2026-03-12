@@ -105,7 +105,12 @@ button, input, select, textarea { font: inherit; }
   min-height: 95vh;
   padding: 120px 0 88px;
 }
-.hero-copy { max-width: 720px; }
+.hero-copy p{
+  font-size: clamp(18px, 2.6vw, 24px);
+  line-height: 1.6;
+  max-width: 680px;
+  color: rgba(255,255,255,0.88);
+}
 .eyebrow {
   display: inline-flex;
   align-items: center;
