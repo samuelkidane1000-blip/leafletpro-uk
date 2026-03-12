@@ -130,6 +130,8 @@ button, input, select, textarea { font: inherit; }
   line-height: 1.05;
   letter-spacing: -0.02em;
   max-width: 720px;
+  color: #ffffff;
+}
 }
 .hero-text {
   max-width: 620px;
