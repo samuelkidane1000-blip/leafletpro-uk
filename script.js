@@ -313,3 +313,34 @@ async function init() {
 }
 
 init();
+const checkoutBtn = document.getElementById("checkoutBtn");
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const totalText = document.getElementById("totalCost")?.textContent || "£0";
+    const amount = Math.round(Number(totalText.replace(/[^\d.]/g, "")) * 100);
+
+    if (!amount) {
+      alert("Please generate a quote first.");
+      return;
+    }
+
+    const response = await fetch("https://leafletpro-backend.onrender.com/create-checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ amount })
+    });
+
+    const session = await response.json();
+
+    if (session.id) {
+      await stripe.redirectToCheckout({ sessionId: session.id });
+    } else {
+      alert("Unable to start checkout.");
+    }
+  });
+}
